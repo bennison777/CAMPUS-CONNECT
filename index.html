@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMPUS CONNECT - Student Dashboard</title>
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       MAIN APPLICATION WRAPPER
+       ====================================================================== -->
+  <div class="app-container">
+
+    <!-- ====================================================================
+         1. SIDEBAR NAVIGATION
+         Fixed on desktop, collapses gracefully on tablet and mobile.
+         ==================================================================== -->
+    <aside class="sidebar" id="sidebar">
+      <!-- Logo Branding -->
+      <div class="sidebar-brand">
+        <div class="brand-icon">
+          <!-- Graduation Cap Icon (SVG) -->
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">CAMPUS</span>
+          <span class="brand-subtitle">CONNECT</span>
+        </div>
+      </div>
+
+      <!-- Compact Student Mini Badge in Sidebar -->
+      <div class="sidebar-student-summary">
+        <div class="mini-avatar">AJ</div>
+        <div class="mini-info">
+          <p class="mini-name">Alex Johnson</p>
+          <p class="mini-id">STU2026001</p>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#dashboard" class="nav-link active">
+              <!-- Grid / Dashboard Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#profile" class="nav-link">
+              <!-- User Profile Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span>My Profile</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#attendance" class="nav-link">
+              <!-- Check Circle / Attendance Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <span>Attendance</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#marks" class="nav-link">
+              <!-- Award / Results Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+              <span>Marks &amp; Results</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#timetable" class="nav-link">
+              <!-- Calendar / Timetable Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>Timetable</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#subjects" class="nav-link">
+              <!-- Book / Subjects Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              <span>Subjects</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#notifications" class="nav-link">
+              <!-- Bell / Notification Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              </svg>
+              <span>Notifications</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#announcements" class="nav-link">
+              <!-- Megaphone / Announcement Icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l18-5v12L3 13v-2z"/>
+                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+              </svg>
+              <span>Announcements</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Status Card -->
+      <div class="sidebar-status-card">
+        <p class="status-label">Academic Status</p>
+        <p class="status-value"><span class="status-indicator"></span>Active &bull; Semester 4</p>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         2. MAIN CONTENT CONTAINER
+         ==================================================================== -->
+    <main class="main-content">
+
+      <!-- Top Header Bar -->
+      <header class="topbar">
+        <div class="topbar-welcome">
+          <h1 class="topbar-title">Student Portal</h1>
+          <p class="topbar-subtitle">Welcome back, Alex! Here is your latest academic overview.</p>
+        </div>
+        <div class="topbar-actions">
+          <div class="badge-term">Academic Year 2026 - 2027</div>
+          <div class="topbar-avatar" title="Alex Johnson">
+            AJ
+          </div>
+        </div>
+      </header>
+
+      <!-- ==================================================================
+           SECTION: DASHBOARD OVERVIEW
+           ================================================================== -->
+      <section id="dashboard" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Dashboard Overview</h2>
+            <p class="section-description">High-level snapshot of your current semester performance</p>
+          </div>
+        </div>
+
+        <!-- 4 Summary KPI Cards -->
+        <div class="kpi-grid">
+
+          <!-- Card 1: Total Subjects -->
+          <div class="kpi-card card-blue">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Total Subjects</span>
+              <div class="kpi-icon-wrap icon-blue">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">6</div>
+            <div class="kpi-subtext">Registered courses for this term</div>
+          </div>
+
+          <!-- Card 2: Attendance -->
+          <div class="kpi-card card-purple">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Attendance</span>
+              <div class="kpi-icon-wrap icon-purple">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">85%</div>
+            <div class="kpi-subtext">Overall cumulative attendance</div>
+          </div>
+
+          <!-- Card 3: Average Marks -->
+          <div class="kpi-card card-gradient">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Average Marks</span>
+              <div class="kpi-icon-wrap icon-gradient">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">82%</div>
+            <div class="kpi-subtext">Consistent First Class performance</div>
+          </div>
+
+          <!-- Card 4: Upcoming Classes -->
+          <div class="kpi-card card-blue-alt">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Upcoming Classes</span>
+              <div class="kpi-icon-wrap icon-blue-alt">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">3</div>
+            <div class="kpi-subtext">Lectures scheduled for today</div>
+          </div>
+
+        </div>
+
+        <!-- Quick Glance Banner -->
+        <div class="overview-banner">
+          <div class="banner-content">
+            <div class="banner-badge">Today's Schedule</div>
+            <h3 class="banner-heading">You have 3 classes remaining today</h3>
+            <p class="banner-description">Data Structures (09:00 AM) &bull; Database Systems (11:15 AM) &bull; Web Technologies (01:15 PM)</p>
+          </div>
+          <a href="#timetable" class="btn btn-primary">View Full Timetable</a>
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION: STUDENT PROFILE
+           ================================================================== -->
+      <section id="profile" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">My Profile</h2>
+            <p class="section-description">Personal and academic credentials registered with the institution</p>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <!-- Profile Left / Photo Placeholder -->
+          <div class="profile-avatar-column">
+            <div class="profile-avatar-placeholder" aria-label="Alex Johnson Profile Image Placeholder">
+              <!-- Person Silhouette SVG -->
+              <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span class="avatar-badge" title="Active Student">&#10003;</span>
+            </div>
+            <span class="avatar-caption">Student ID: STU2026001</span>
+          </div>
+
+          <!-- Profile Right / Details -->
+          <div class="profile-details-column">
+            <div class="profile-heading-group">
+              <h3 class="student-name">Alex Johnson</h3>
+              <span class="role-pill">Undergraduate Student</span>
+            </div>
+
+            <!-- Profile Info Grid -->
+            <div class="profile-info-grid">
+              <div class="info-item">
+                <span class="info-label">Student ID</span>
+                <span class="info-value">STU2026001</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Department</span>
+                <span class="info-value">Computer Science</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Academic Year</span>
+                <span class="info-value">2nd Year (Semester 4)</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Degree Program</span>
+                <span class="info-value">Bachelor of Science in CS</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">College Email</span>
+                <span class="info-value">alex.johnson@campusconnect.edu</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Enrollment Status</span>
+                <span class="info-value status-active">Full-Time Registered</span>
+              </div>
+            </div>
+
+            <!-- Profile Summary Strip -->
+            <div class="profile-meta-bar">
+              <div class="meta-tag">
+                <span class="meta-dot"></span> Mentor: Prof. Robert Davis
+              </div>
+              <div class="meta-tag">
+                <span class="meta-dot"></span> Campus: Tech Park West Campus
+              </div>
+              <div class="meta-tag">
+                <span class="meta-dot"></span> Batch: 2025 - 2029
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION: ATTENDANCE
+           ================================================================== -->
+      <section id="attendance" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Attendance Record</h2>
+            <p class="section-description">Overall performance and subject-wise classroom attendance</p>
+          </div>
+        </div>
+
+        <div class="attendance-container">
+          <!-- Overall Summary Card -->
+          <div class="attendance-summary-card">
+            <div class="attendance-gauge">
+              <div class="gauge-circle">
+                <span class="gauge-value">85%</span>
+                <span class="gauge-caption">Overall Attendance</span>
+              </div>
+            </div>
+            <div class="attendance-summary-text">
+              <h4>Requirement Satisfied</h4>
+              <p>You have attended 180 out of 212 total scheduled lecture hours this term. You meet the minimum institutional requirement of 75%.</p>
+              <div class="attendance-stats-row">
+                <div class="stat-box">
+                  <span class="stat-number">212</span>
+                  <span class="stat-name">Total Classes</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number stat-green">180</span>
+                  <span class="stat-name">Attended</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number stat-red">32</span>
+                  <span class="stat-name">Absent</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject-wise Attendance Progress Bars -->
+          <div class="subject-attendance-card">
+            <h3 class="card-subtitle">Subject-Wise Attendance Breakdown</h3>
+
+            <div class="progress-list">
+
+              <!-- Subject 1 -->
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-subject">Data Structures &amp; Algorithms (CS201)</span>
+                  <span class="progress-percent">90%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill progress-fill-90"></div>
+                </div>
+                <div class="progress-meta">36 of 40 sessions attended &bull; Status: Excellent</div>
+              </div>
+
+              <!-- Subject 2 -->
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-subject">Database Management Systems (CS202)</span>
+                  <span class="progress-percent">86%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill progress-fill-86"></div>
+                </div>
+                <div class="progress-meta">31 of 36 sessions attended &bull; Status: Good</div>
+              </div>
+
+              <!-- Subject 3 -->
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-subject">Operating Systems (CS203)</span>
+                  <span class="progress-percent">82%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill progress-fill-82"></div>
+                </div>
+                <div class="progress-meta">28 of 34 sessions attended &bull; Status: Good</div>
+              </div>
+
+              <!-- Subject 4 -->
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-subject">Computer Networks (CS204)</span>
+                  <span class="progress-percent">88%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill progress-fill-88"></div>
+                </div>
+                <div class="progress-meta">30 of 34 sessions attended &bull; Status: Excellent</div>
+              </div>
+
+              <!-- Subject 5 -->
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-subject">Software Engineering (CS205)</span>
+                  <span class="progress-percent">80%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill progress-fill-80"></div>
+                </div>
+                <div class="progress-meta">24 of 30 sessions attended &bull; Status: Satisfactory</div>
+              </div>
+
+              <!-- Subject 6 -->
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-subject">Web Technologies (CS206)</span>
+                  <span class="progress-percent">84%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill progress-fill-84"></div>
+                </div>
+                <div class="progress-meta">31 of 37 sessions attended &bull; Status: Good</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION: MARKS & RESULTS
+           ================================================================== -->
+      <section id="marks" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Marks &amp; Results</h2>
+            <p class="section-description">Assessment breakdown across internal and semester examinations</p>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-responsive">
+            <table class="marks-table">
+              <thead>
+                <tr>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Internal (30)</th>
+                  <th scope="col">External (70)</th>
+                  <th scope="col">Total (100)</th>
+                  <th scope="col">Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-subject-cell">
+                    <strong>Data Structures &amp; Algorithms</strong>
+                    <span class="table-code">CS201</span>
+                  </td>
+                  <td>27</td>
+                  <td>61</td>
+                  <td><span class="marks-total">88</span></td>
+                  <td><span class="grade-badge grade-a-plus">A+</span></td>
+                </tr>
+
+                <tr>
+                  <td class="table-subject-cell">
+                    <strong>Database Management Systems</strong>
+                    <span class="table-code">CS202</span>
+                  </td>
+                  <td>25</td>
+                  <td>58</td>
+                  <td><span class="marks-total">83</span></td>
+                  <td><span class="grade-badge grade-a">A</span></td>
+                </tr>
+
+                <tr>
+                  <td class="table-subject-cell">
+                    <strong>Operating Systems</strong>
+                    <span class="table-code">CS203</span>
+                  </td>
+                  <td>23</td>
+                  <td>52</td>
+                  <td><span class="marks-total">75</span></td>
+                  <td><span class="grade-badge grade-b-plus">B+</span></td>
+                </tr>
+
+                <tr>
+                  <td class="table-subject-cell">
+                    <strong>Computer Networks</strong>
+                    <span class="table-code">CS204</span>
+                  </td>
+                  <td>26</td>
+                  <td>60</td>
+                  <td><span class="marks-total">86</span></td>
+                  <td><span class="grade-badge grade-a">A</span></td>
+                </tr>
+
+                <tr>
+                  <td class="table-subject-cell">
+                    <strong>Software Engineering</strong>
+                    <span class="table-code">CS205</span>
+                  </td>
+                  <td>24</td>
+                  <td>55</td>
+                  <td><span class="marks-total">79</span></td>
+                  <td><span class="grade-badge grade-b-plus">B+</span></td>
+                </tr>
+
+                <tr>
+                  <td class="table-subject-cell">
+                    <strong>Web Technologies</strong>
+                    <span class="table-code">CS206</span>
+                  </td>
+                  <td>26</td>
+                  <td>55</td>
+                  <td><span class="marks-total">81</span></td>
+                  <td><span class="grade-badge grade-a">A</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="table-summary-row">
+                  <td colspan="3"><strong>Average Score (Across 6 Subjects)</strong></td>
+                  <td><strong class="marks-highlight">82%</strong></td>
+                  <td><span class="grade-badge grade-a">First Class Distinction</span></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION: CLASS TIMETABLE
+           ================================================================== -->
+      <section id="timetable" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Class Timetable</h2>
+            <p class="section-description">Weekly schedule of lectures, practical labs, and faculty assignments</p>
+          </div>
+        </div>
+
+        <div class="timetable-card">
+          <div class="table-responsive">
+            <table class="timetable-grid">
+              <thead>
+                <tr>
+                  <th scope="col" class="th-day">Day</th>
+                  <th scope="col">09:00 - 10:00</th>
+                  <th scope="col">10:00 - 11:00</th>
+                  <th scope="col" class="th-break">11:00 - 11:15</th>
+                  <th scope="col">11:15 - 12:15</th>
+                  <th scope="col" class="th-break">12:15 - 01:15</th>
+                  <th scope="col">01:15 - 02:15</th>
+                  <th scope="col">02:15 - 03:15</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Monday -->
+                <tr>
+                  <td class="day-cell"><strong>Monday</strong></td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Data Structures</span>
+                      <span class="slot-faculty">Prof. Robert Davis</span>
+                      <span class="slot-room">Room 301</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Operating Systems</span>
+                      <span class="slot-faculty">Prof. Michael Chang</span>
+                      <span class="slot-room">Room 304</span>
+                    </div>
+                  </td>
+                  <td rowspan="5" class="break-cell"><span>Tea Break</span></td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Database Systems</span>
+                      <span class="slot-faculty">Dr. Sarah Jenkins</span>
+                      <span class="slot-room">Lab 2</span>
+                    </div>
+                  </td>
+                  <td rowspan="5" class="break-cell lunch-cell"><span>Lunch Break</span></td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Web Technologies</span>
+                      <span class="slot-faculty">Dr. Priya Sharma</span>
+                      <span class="slot-room">Lab 1</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Software Eng.</span>
+                      <span class="slot-faculty">Prof. Alan Miller</span>
+                      <span class="slot-room">Room 302</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Tuesday -->
+                <tr>
+                  <td class="day-cell"><strong>Tuesday</strong></td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Computer Networks</span>
+                      <span class="slot-faculty">Dr. Emily Watson</span>
+                      <span class="slot-room">Room 205</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Data Structures</span>
+                      <span class="slot-faculty">Prof. Robert Davis</span>
+                      <span class="slot-room">Room 301</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Software Eng.</span>
+                      <span class="slot-faculty">Prof. Alan Miller</span>
+                      <span class="slot-room">Room 302</span>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="class-slot lab-session">
+                      <span class="slot-title">DBMS Practical Lab</span>
+                      <span class="slot-faculty">Dr. Sarah Jenkins</span>
+                      <span class="slot-room">Computer Lab 2</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Wednesday -->
+                <tr>
+                  <td class="day-cell"><strong>Wednesday</strong></td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Operating Systems</span>
+                      <span class="slot-faculty">Prof. Michael Chang</span>
+                      <span class="slot-room">Room 304</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Database Systems</span>
+                      <span class="slot-faculty">Dr. Sarah Jenkins</span>
+                      <span class="slot-room">Room 301</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Computer Networks</span>
+                      <span class="slot-faculty">Dr. Emily Watson</span>
+                      <span class="slot-room">Room 205</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Data Structures</span>
+                      <span class="slot-faculty">Prof. Robert Davis</span>
+                      <span class="slot-room">Room 301</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Web Technologies</span>
+                      <span class="slot-faculty">Dr. Priya Sharma</span>
+                      <span class="slot-room">Lab 1</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Thursday -->
+                <tr>
+                  <td class="day-cell"><strong>Thursday</strong></td>
+                  <td colspan="2">
+                    <div class="class-slot lab-session">
+                      <span class="slot-title">Web Technologies Lab</span>
+                      <span class="slot-faculty">Dr. Priya Sharma</span>
+                      <span class="slot-room">Computer Lab 1</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Operating Systems</span>
+                      <span class="slot-faculty">Prof. Michael Chang</span>
+                      <span class="slot-room">Room 304</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Computer Networks</span>
+                      <span class="slot-faculty">Dr. Emily Watson</span>
+                      <span class="slot-room">Room 205</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Software Eng.</span>
+                      <span class="slot-faculty">Prof. Alan Miller</span>
+                      <span class="slot-room">Room 302</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Friday -->
+                <tr>
+                  <td class="day-cell"><strong>Friday</strong></td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Software Eng.</span>
+                      <span class="slot-faculty">Prof. Alan Miller</span>
+                      <span class="slot-room">Room 302</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Database Systems</span>
+                      <span class="slot-faculty">Dr. Sarah Jenkins</span>
+                      <span class="slot-room">Room 301</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Data Structures</span>
+                      <span class="slot-faculty">Prof. Robert Davis</span>
+                      <span class="slot-room">Room 301</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot">
+                      <span class="slot-title">Computer Networks</span>
+                      <span class="slot-faculty">Dr. Emily Watson</span>
+                      <span class="slot-room">Room 205</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-slot library-slot">
+                      <span class="slot-title">Library / Tutorial</span>
+                      <span class="slot-faculty">Faculty Mentorship</span>
+                      <span class="slot-room">Central Library</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION: SUBJECTS
+           ================================================================== -->
+      <section id="subjects" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Enrolled Subjects</h2>
+            <p class="section-description">Registered courses, assigned faculty members, and subject codes</p>
+          </div>
+        </div>
+
+        <div class="subjects-grid">
+
+          <!-- Subject 1 -->
+          <div class="subject-card">
+            <div class="subject-card-header">
+              <span class="subject-badge badge-blue">CS201</span>
+              <span class="subject-credits">4 Credits</span>
+            </div>
+            <h3 class="subject-name">Data Structures &amp; Algorithms</h3>
+            <div class="subject-divider"></div>
+            <div class="subject-faculty-row">
+              <div class="faculty-avatar">RD</div>
+              <div class="faculty-details">
+                <span class="faculty-title">Faculty In-Charge</span>
+                <span class="faculty-name">Prof. Robert Davis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject 2 -->
+          <div class="subject-card">
+            <div class="subject-card-header">
+              <span class="subject-badge badge-purple">CS202</span>
+              <span class="subject-credits">4 Credits</span>
+            </div>
+            <h3 class="subject-name">Database Management Systems</h3>
+            <div class="subject-divider"></div>
+            <div class="subject-faculty-row">
+              <div class="faculty-avatar">SJ</div>
+              <div class="faculty-details">
+                <span class="faculty-title">Faculty In-Charge</span>
+                <span class="faculty-name">Dr. Sarah Jenkins</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject 3 -->
+          <div class="subject-card">
+            <div class="subject-card-header">
+              <span class="subject-badge badge-blue">CS203</span>
+              <span class="subject-credits">4 Credits</span>
+            </div>
+            <h3 class="subject-name">Operating Systems</h3>
+            <div class="subject-divider"></div>
+            <div class="subject-faculty-row">
+              <div class="faculty-avatar">MC</div>
+              <div class="faculty-details">
+                <span class="faculty-title">Faculty In-Charge</span>
+                <span class="faculty-name">Prof. Michael Chang</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject 4 -->
+          <div class="subject-card">
+            <div class="subject-card-header">
+              <span class="subject-badge badge-purple">CS204</span>
+              <span class="subject-credits">3 Credits</span>
+            </div>
+            <h3 class="subject-name">Computer Networks</h3>
+            <div class="subject-divider"></div>
+            <div class="subject-faculty-row">
+              <div class="faculty-avatar">EW</div>
+              <div class="faculty-details">
+                <span class="faculty-title">Faculty In-Charge</span>
+                <span class="faculty-name">Dr. Emily Watson</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject 5 -->
+          <div class="subject-card">
+            <div class="subject-card-header">
+              <span class="subject-badge badge-blue">CS205</span>
+              <span class="subject-credits">3 Credits</span>
+            </div>
+            <h3 class="subject-name">Software Engineering</h3>
+            <div class="subject-divider"></div>
+            <div class="subject-faculty-row">
+              <div class="faculty-avatar">AM</div>
+              <div class="faculty-details">
+                <span class="faculty-title">Faculty In-Charge</span>
+                <span class="faculty-name">Prof. Alan Miller</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject 6 -->
+          <div class="subject-card">
+            <div class="subject-card-header">
+              <span class="subject-badge badge-purple">CS206</span>
+              <span class="subject-credits">4 Credits</span>
+            </div>
+            <h3 class="subject-name">Web Technologies</h3>
+            <div class="subject-divider"></div>
+            <div class="subject-faculty-row">
+              <div class="faculty-avatar">PS</div>
+              <div class="faculty-details">
+                <span class="faculty-title">Faculty In-Charge</span>
+                <span class="faculty-name">Dr. Priya Sharma</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION: NOTIFICATIONS
+           ================================================================== -->
+      <section id="notifications" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Notifications</h2>
+            <p class="section-description">Important alerts, deadlines, and schedule updates</p>
+          </div>
+        </div>
+
+        <div class="notifications-list">
+
+          <!-- Notification 1: Internal examination schedule -->
+          <article class="notification-card border-blue">
+            <div class="notification-icon-wrap icon-blue">
+              <!-- Calendar / Exam Icon -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="notification-body">
+              <div class="notification-top">
+                <span class="notification-badge badge-blue">Exam Schedule</span>
+                <span class="notification-time">Published: Nov 20, 2026</span>
+              </div>
+              <h3 class="notification-title">Mid-Semester Examination Schedule Announced</h3>
+              <p class="notification-text">The official timetable for the upcoming Mid-Semester examinations has been published. Theory assessments commence from December 5, 2026. Hall tickets and seating allotments are available on the examination portal.</p>
+            </div>
+          </article>
+
+          <!-- Notification 2: Assignment submission reminder -->
+          <article class="notification-card border-amber">
+            <div class="notification-icon-wrap icon-amber">
+              <!-- Clock / Reminder Icon -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="notification-body">
+              <div class="notification-top">
+                <span class="notification-badge badge-amber">Submission Due</span>
+                <span class="notification-time">Due: Nov 27, 2026 &bull; 11:59 PM</span>
+              </div>
+              <h3 class="notification-title">Assignment Submission Reminder: Data Structures</h3>
+              <p class="notification-text">Assignment #3 on "Binary Search Trees and Graph Traversal Algorithms" is due this Friday. Ensure your source code zip and report PDF are uploaded prior to the midnight deadline. Late submissions incur a 10% penalty.</p>
+            </div>
+          </article>
+
+          <!-- Notification 3: Upcoming college event -->
+          <article class="notification-card border-purple">
+            <div class="notification-icon-wrap icon-purple">
+              <!-- Flag / Event Icon -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                <line x1="4" y1="22" x2="4" y2="15"/>
+              </svg>
+            </div>
+            <div class="notification-body">
+              <div class="notification-top">
+                <span class="notification-badge badge-purple">College Event</span>
+                <span class="notification-time">Dec 12 - 14, 2026</span>
+              </div>
+              <h3 class="notification-title">Upcoming College Event: InnoTech Annual Tech Symposium</h3>
+              <p class="notification-text">Registration is now open for the annual collegiate tech fest featuring 24-hour hackathons, robotics challenges, guest keynotes from industry tech leaders, and inter-college project exhibitions. Visit the student council desk to register your team.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION: ANNOUNCEMENTS
+           ================================================================== -->
+      <section id="announcements" class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2 class="section-title">Campus Announcements</h2>
+            <p class="section-description">Institutional notices, campus advisories, and administrative updates</p>
+          </div>
+        </div>
+
+        <div class="announcements-grid">
+
+          <!-- Announcement Card 1 -->
+          <div class="announcement-card">
+            <div class="announcement-badge">Academic Notice</div>
+            <h3 class="announcement-title">Central Library 24/7 Hours During Finals</h3>
+            <p class="announcement-snippet">In order to support students preparing for upcoming examinations, the Central Library will operate round-the-clock starting December 1st. Discussion rooms and digital study pods will remain accessible.</p>
+            <div class="announcement-footer">
+              <span class="announcement-date">Nov 22, 2026</span>
+              <span class="announcement-author">Dean of Academics</span>
+            </div>
+          </div>
+
+          <!-- Announcement Card 2 -->
+          <div class="announcement-card">
+            <div class="announcement-badge">Financial Aid</div>
+            <h3 class="announcement-title">Merit Scholarship Applications Now Open</h3>
+            <p class="announcement-snippet">Second-year students holding a cumulative grade point average above 80% are eligible to apply for the 2026-2027 Dean's Excellence Scholarship. Submit attested mark sheets before December 15th.</p>
+            <div class="announcement-footer">
+              <span class="announcement-date">Nov 18, 2026</span>
+              <span class="announcement-author">Student Welfare Office</span>
+            </div>
+          </div>
+
+          <!-- Announcement Card 3 -->
+          <div class="announcement-card">
+            <div class="announcement-badge">Infrastructure</div>
+            <h3 class="announcement-title">Campus Wi-Fi 6 Upgrade in Academic Blocks</h3>
+            <p class="announcement-snippet">High-speed Wi-Fi 6 access points have been successfully installed across the Computer Science Department and engineering laboratories. Connect using your student credentials on 'CampusConnect-Secure'.</p>
+            <div class="announcement-footer">
+              <span class="announcement-date">Nov 15, 2026</span>
+              <span class="announcement-author">IT Services Division</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           FOOTER
+           ================================================================== -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand-section">
+            <div class="footer-logo">
+              <div class="footer-logo-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <span class="footer-brand-title">CAMPUS CONNECT</span>
+            </div>
+            <p class="footer-tagline">A modern, unified student portal designed for academic excellence, real-time collaboration, and campus life.</p>
+          </div>
+
+          <div class="footer-info-section">
+            <h4 class="footer-heading">College Information</h4>
+            <p class="footer-detail"><strong>Institution:</strong> Apex Institute of Technology &amp; Science</p>
+            <p class="footer-detail"><strong>Campus:</strong> Tech Park Campus, 100 University Boulevard</p>
+            <p class="footer-detail"><strong>Student Support:</strong> support@campusconnect.edu &bull; (555) 019-2834</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; 2026 CAMPUS CONNECT &bull; Apex Institute of Technology &amp; Science. All rights reserved.</p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>
